@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+/* html wird mit eigenschaften belegt: damit die EIgenschaften vererbt werden und alle Elemente auf der Seite erreichen. (schriftart wird vererbt)
+ */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+body {
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding: 0 20px;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+
+/* Es muss a angesprochen werden und nicht nav oder li, weil einige Eigenschaften nicht vererbar sind*/
+.navlinks {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.4 linear;
+}
+.navlinks:hover {
+  color: grey;
+  border-color: white;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+#main-nav {
+  display: none;
+}
+
+/* Wenn es ein Element mit der Klasse .show und mit der id #mainnav ist
+ */
+#main-nav.show {
+  display: block;
+}
+#banner {
+  display: flex;
+  background-image: url(img/intro.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  background-color: white;
+  text-decoration: none;
+  color: #374a67;
+  border: 1px solid #374a67;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+.button:hover {
+  background-color: #374a67;
+  color: white;
+  border-color: white;
+}
+h2 {
+  margin: 10px;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+}
+.card {
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 11px 14px 10px -8px rgba(0, 0, 0, 0.45);
+
+  /*  Die Breite der Karte immer auf 25% setzen
+ */
+  flex-grow: 1;
+  flex-basis: 25%;
+  flex: 1 1 25%;
+
+  /*   Rezept Button nach unten drücken
+ */
+  display: flex;
+  flex-direction: column;
+}
+.card a {
+  color: rgb(70, 68, 68);
+  text-decoration: none;
+  text-align: center;
+  /*   Rezept Button nach unten drücken
+ */
+  flex-grow: 1;
+}
+.card p,
+.card h3 {
+  padding: 10px;
+}
+h3 {
+  color: black;
+  text-decoration: none;
+}
+.button.blue {
+  background-color: #374a67;
+  color: white;
+  border-color: #374a67;
+  display: block;
+  margin: 10px;
+  max-height: fit-content;
+}
+.blue:hover {
+  background-color: white;
+  color: #374a67;
+}
+#newsletter {
+  background-color: #04122b;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+}
+.buttonnewsl {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: grey;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid #374a67;
+}
+.button.no-radius {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+/* Damit keine Lücke zwischen dem Button und dem Email- Feld ist
+ */
+form {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  margin: 10px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+}
+.footer-right {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+}
+/* Ab hier nur für große Bildschirme, media query */
+
+@media (min-width: 1180px) {
+  #menu {
+    display: none;
+  }
+  #main-nav {
+    display: block;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .rezeptliste {
+    display: flex;
+    max-width: 1500px;
+    margin: auto;
+    gap: 20px;
+  }
+  .footer-left {
+    flex-direction: row;
+  }
+  .footer-right {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+}
